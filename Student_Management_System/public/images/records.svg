@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="100%" height="140" style="border-radius:12px;">
+  <defs>
+    <linearGradient id="bgGradDelete" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E" />
+      <stop offset="60%" stop-color="#115E59" />
+      <stop offset="100%" stop-color="#042F2E" />
+    </linearGradient>
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F87171" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <filter id="shadowDelete" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="140" fill="url(#bgGradDelete)" rx="12" />
+
+  <circle cx="80" cy="120" r="70" fill="#14B8A6" fill-opacity="0.12" />
+  <circle cx="510" cy="30" r="65" fill="#DC2626" fill-opacity="0.15" />
+
+  <!-- Filing Folder / Records Graphic (Left) -->
+  <g transform="translate(60, 24)" filter="url(#shadowDelete)">
+    <!-- Back folder tab -->
+    <path d="M0 8 L30 8 L40 18 L80 18 L80 75 L0 75 Z" fill="#F59E0B" rx="4" />
+    <!-- Front folder pocket -->
+    <rect x="0" y="24" width="85" height="52" rx="4" fill="#FDE68A" />
+    <!-- Sheet sticking out -->
+    <rect x="12" y="10" width="55" height="40" rx="3" fill="#FFFFFF" />
+    <line x1="20" y1="20" x2="52" y2="20" stroke="#0F766E" stroke-width="2" />
+    <line x1="20" y1="28" x2="45" y2="28" stroke="#9CA3AF" stroke-width="2" />
+  </g>
+
+  <!-- Delete Confirmation / Safety Card (Center) -->
+  <g transform="translate(195, 16)" filter="url(#shadowDelete)">
+    <rect x="0" y="0" width="220" height="92" rx="10" fill="#FFFFFF" />
+
+    <!-- Danger Badge Icon -->
+    <circle cx="36" cy="46" r="22" fill="#FEE2E2" />
+    <!-- Trash / Warning Icon -->
+    <g transform="translate(26, 35)">
+      <!-- Bin lid -->
+      <line x1="2" y1="5" x2="18" y2="5" stroke="#DC2626" stroke-width="2" stroke-linecap="round" />
+      <line x1="7" y1="2" x2="13" y2="2" stroke="#DC2626" stroke-width="2" stroke-linecap="round" />
+      <!-- Bin body -->
+      <path d="M4 6 L5 19 A2 2 0 0 0 7 21 L13 21 A2 2 0 0 0 15 19 L16 6" fill="none" stroke="#DC2626" stroke-width="2" />
+      <line x1="8" y1="9" x2="8" y2="17" stroke="#DC2626" stroke-width="1.5" />
+      <line x1="12" y1="9" x2="12" y2="17" stroke="#DC2626" stroke-width="1.5" />
+    </g>
+
+    <text x="70" y="32" fill="#DC2626" font-family="'Poppins', sans-serif" font-size="12" font-weight="700">RECORD REMOVAL</text>
+    <text x="70" y="48" fill="#1F2937" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="500">Careful Student Deletion</text>
+    <text x="70" y="64" fill="#6B7280" font-family="'Poppins', sans-serif" font-size="9">Select roll number to purge entry</text>
+
+    <!-- Confirmation chip -->
+    <rect x="70" y="71" width="90" height="13" rx="6.5" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="0.8" />
+    <text x="115" y="81" fill="#DC2626" font-family="'Poppins', sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">REQUIRES CONFIRMATION</text>
+  </g>
+
+  <!-- Security Shield Graphic (Right) -->
+  <g transform="translate(455, 24)" filter="url(#shadowDelete)">
+    <rect x="0" y="0" width="100" height="74" rx="8" fill="#FFFFFF" />
+    <!-- Shield -->
+    <path d="M50 16 L72 24 L72 44 Q72 62 50 68 Q28 62 28 44 L28 24 Z" fill="#F0FDFA" stroke="#0F766E" stroke-width="2" />
+    <!-- Lock / Exclamation inside shield -->
+    <circle cx="50" cy="38" r="7" fill="#0F766E" />
+    <rect x="47" y="45" width="6" height="12" rx="2" fill="#0F766E" />
+  </g>
+
+  <g transform="translate(180, 114)">
+    <rect x="0" y="0" width="240" height="20" rx="10" fill="#042F2E" fill-opacity="0.55" />
+    <text x="120" y="14" fill="#FFFBF2" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" letter-spacing="0.6">
+      RECORDS MANAGEMENT ARCHIVE
+    </text>
+  </g>
+</svg>

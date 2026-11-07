@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="100%" height="140" style="border-radius:12px;">
+  <defs>
+    <linearGradient id="bgGradSearch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E" />
+      <stop offset="60%" stop-color="#115E59" />
+      <stop offset="100%" stop-color="#134E4A" />
+    </linearGradient>
+    <linearGradient id="accentGradSearch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="shadowSearch" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="140" fill="url(#bgGradSearch)" rx="12" />
+
+  <circle cx="90" cy="120" r="75" fill="#14B8A6" fill-opacity="0.12" />
+  <circle cx="510" cy="30" r="65" fill="#F59E0B" fill-opacity="0.15" />
+
+  <!-- Search / Magnifying Glass Illustration (Left) -->
+  <g transform="translate(60, 20)" filter="url(#shadowSearch)">
+    <circle cx="45" cy="45" r="32" fill="#FFFFFF" stroke="#F59E0B" stroke-width="5" />
+    <circle cx="45" cy="45" r="24" fill="#F0FDFA" />
+    <path d="M68 68 L92 92" stroke="#F59E0B" stroke-width="8" stroke-linecap="round" />
+    <path d="M72 72 L88 88" stroke="#D97706" stroke-width="4" stroke-linecap="round" />
+    <!-- Center roll symbol -->
+    <text x="45" y="51" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="16" font-weight="700" text-anchor="middle">#ID</text>
+  </g>
+
+  <!-- Found Student Profile Card (Center) -->
+  <g transform="translate(205, 16)" filter="url(#shadowSearch)">
+    <rect x="0" y="0" width="220" height="92" rx="10" fill="#FFFFFF" />
+    <!-- Avatar -->
+    <circle cx="36" cy="38" r="22" fill="#0F766E" />
+    <!-- Avatar generic head & shoulders -->
+    <circle cx="36" cy="32" r="9" fill="#FFFBF2" />
+    <path d="M22 51 C24 43, 48 43, 50 51" fill="#FFFBF2" />
+    <!-- Badge -->
+    <rect x="18" y="66" width="36" height="14" rx="7" fill="url(#accentGradSearch)" />
+    <text x="36" y="77" fill="#042F2E" font-family="'Poppins', sans-serif" font-size="8" font-weight="700" text-anchor="middle">ROLL NO</text>
+
+    <!-- Student details right side -->
+    <rect x="70" y="14" width="60" height="14" rx="4" fill="#F0FDFA" />
+    <text x="76" y="25" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="9" font-weight="700">ROLL: 240</text>
+
+    <text x="70" y="46" fill="#1F2937" font-family="'Poppins', sans-serif" font-size="14" font-weight="700">Hari Sharma</text>
+    
+    <text x="70" y="64" fill="#6B7280" font-family="'Poppins', sans-serif" font-size="10" font-weight="500">Total Marks: <tspan fill="#0F766E" font-weight="700">985 / 1000</tspan></text>
+    
+    <!-- Status pill -->
+    <rect x="70" y="72" width="75" height="12" rx="6" fill="#DCFCE7" />
+    <text x="107" y="81" fill="#15803D" font-family="'Poppins', sans-serif" font-size="8" font-weight="600" text-anchor="middle">GRADE: A+ PASSED</text>
+  </g>
+
+  <!-- Query Pin Icon (Right) -->
+  <g transform="translate(460, 25)" filter="url(#shadowSearch)">
+    <rect x="0" y="0" width="95" height="74" rx="8" fill="#FFFFFF" />
+    <circle cx="47" cy="28" r="16" fill="url(#accentGradSearch)" />
+    <!-- Checkmark inside -->
+    <polyline points="40,28 45,33 55,23" stroke="#042F2E" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    <text x="47" y="56" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="10" font-weight="700" text-anchor="middle">INSTANT</text>
+    <text x="47" y="66" fill="#6B7280" font-family="'Poppins', sans-serif" font-size="8" text-anchor="middle">LOOKUP</text>
+  </g>
+
+  <g transform="translate(180, 114)">
+    <rect x="0" y="0" width="240" height="20" rx="10" fill="#042F2E" fill-opacity="0.55" />
+    <text x="120" y="14" fill="#FFFBF2" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" letter-spacing="0.6">
+      INDIVIDUAL STUDENT LOOKUP
+    </text>
+  </g>
+</svg>

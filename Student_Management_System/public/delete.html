@@ -1,0 +1,132 @@
+<!-- To delete student data-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student - EduTrack</title>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Top Navbar Header -->
+    <header class="site-header">
+        <div class="brand-container">
+            <div class="brand-logo-badge">✦</div>
+            <div class="brand-text-wrap">
+                <span class="brand-title">EduTrack</span>
+                <span class="brand-tagline">Smart Student Records</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="list.html" class="nav-link">Students</a>
+            <a href="listOne.html" class="nav-link">Search</a>
+            <a href="insert.html" class="nav-link">Add Student</a>
+            <a href="update.html" class="nav-link">Update</a>
+            <a href="delete.html" class="nav-link active">Delete</a>
+        </nav>
+    </header>
+
+    <!-- Two-Column Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">🗑️ ARCHIVE &amp; PURGE</div>
+            <h1 class="hero-title"><span class="heading-icon">🗑️</span> DELETE STUDENT</h1>
+            <p class="hero-subtitle">Safely remove an obsolete or withdrawn student record from the school database.</p>
+        </div>
+
+        <div class="hero-image-wrap">
+            <img src="images/delete.jpg" alt="Student records and files management" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Form Card -->
+    <div class="form-card">
+        <div class="form-group">
+            <label for="sno" class="form-label">Student Number to Delete</label>
+            <select id="sno">
+                <option value="">Select Roll Number</option>
+            </select>
+            <div class="form-hint">Warning: Removing a student record is permanent</div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-danger" onclick="deleteStudent()">Delete 🗑️</button>
+            <button class="btn btn-outline" onclick="location.href='index.html'">Home Page 🏠</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 EduTrack – Student Management System</p>
+    </footer>
+
+</div>
+
+<script>
+// Populate roll numbers dropdown from /students
+function loadRollNumbers() {
+    fetch("/students")
+    .then(response => response.json())
+    .then(data => {
+        let select = document.getElementById("sno");
+        select.innerHTML = '<option value="">Select Roll Number</option>';
+        data.forEach(student => {
+            let opt = document.createElement("option");
+            opt.value = student.student_id;
+            opt.textContent = student.student_id;
+            select.appendChild(opt);
+        });
+    })
+    .catch(err => console.error("Error loading roll numbers:", err));
+}
+loadRollNumbers();
+
+function deleteStudent()
+{
+let sno=document.getElementById("sno").value;
+
+if (!sno) {
+    alert("Please select a student roll number to delete");
+    return;
+}
+
+if(confirm("Are you sure?")==false)
+return;
+
+fetch("/students/"+sno,{
+method:"DELETE"
+})
+.then(response=>{
+if(response.ok)
+return response.text();
+
+return response.text().then(message=>{
+throw new Error(message);
+});
+
+})
+.then(message=>{
+alert(message);
+location.href="index.html";
+
+})
+
+.catch(error=>{
+alert(error.message);
+
+});
+}
+
+</script>
+</body>
+</html>

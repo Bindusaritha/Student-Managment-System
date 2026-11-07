@@ -1,0 +1,159 @@
+<!-- UPDATE STUDENT DETAILS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student - EduTrack</title>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Top Navbar Header -->
+    <header class="site-header">
+        <div class="brand-container">
+            <div class="brand-logo-badge">✦</div>
+            <div class="brand-text-wrap">
+                <span class="brand-title">EduTrack</span>
+                <span class="brand-tagline">Smart Student Records</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="list.html" class="nav-link">Students</a>
+            <a href="listOne.html" class="nav-link">Search</a>
+            <a href="insert.html" class="nav-link">Add Student</a>
+            <a href="update.html" class="nav-link active">Update</a>
+            <a href="delete.html" class="nav-link">Delete</a>
+        </nav>
+    </header>
+
+    <!-- Two-Column Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">✏️ RECORD MODIFICATION</div>
+            <h1 class="hero-title"><span class="heading-icon">✏️</span> UPDATE STUDENT</h1>
+            <p class="hero-subtitle">Select a roll number to modify academic scores and student profile information.</p>
+        </div>
+
+        <div class="hero-image-wrap">
+            <img src="images/update.jpg" alt="Student writing and updating academic notes" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Form Card -->
+    <div class="form-card">
+        <div class="form-group">
+            <label for="sno" class="form-label">Student Number</label>
+            <select id="sno">
+                <option value="">Select Roll Number</option>
+            </select>
+            <div class="form-hint">Select a student roll number to load and modify details</div>
+        </div>
+
+        <div class="form-group">
+            <label for="name" class="form-label">Student Name</label>
+            <input type="text" id="name" placeholder="Enter updated name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="total" class="form-label">Total Marks</label>
+            <input type="number" id="total" placeholder="Enter updated total marks" required>
+        </div>
+
+        <div class="button-group">
+            <button class="btn" onclick="updateStudent()">Update ✏️</button>
+            <button class="btn btn-outline" onclick="location.href='index.html'">Home Page 🏠</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 EduTrack – Student Management System</p>
+    </footer>
+
+</div>
+
+<script>
+// Populate roll numbers dropdown from /students
+function loadRollNumbers() {
+    fetch("/students")
+    .then(response => response.json())
+    .then(data => {
+        let select = document.getElementById("sno");
+        select.innerHTML = '<option value="">Select Roll Number</option>';
+        data.forEach(student => {
+            let opt = document.createElement("option");
+            opt.value = student.student_id;
+            opt.textContent = student.student_id;
+            select.appendChild(opt);
+        });
+        select.addEventListener("change", function() {
+            let selected = data.find(s => String(s.student_id) === String(this.value));
+            if (selected) {
+                document.getElementById("name").value = selected.student_name;
+                document.getElementById("total").value = selected.total;
+            } else {
+                document.getElementById("name").value = "";
+                document.getElementById("total").value = "";
+            }
+        });
+    })
+    .catch(err => console.error("Error loading roll numbers:", err));
+}
+loadRollNumbers();
+
+function updateStudent()
+{
+
+let sno=document.getElementById("sno").value;
+let name=document.getElementById("name").value;
+let total=document.getElementById("total").value;
+
+if (!sno) {
+    alert("Please select a student roll number");
+    return;
+}
+
+fetch("/students/"+sno,{
+method:"PUT",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+name:name,
+total:total
+})
+})
+.then(response=>{
+if(response.ok)
+return response.text();
+
+return response.text().then(message=>{
+throw new Error(message);
+});
+
+})  //end of .then
+
+.then(message=>{
+alert(message);
+location.href="index.html";
+})
+
+.catch(error=>{
+
+alert(error.message);
+});
+
+}//End of function
+</script>
+</body>
+</html>

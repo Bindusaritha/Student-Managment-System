@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - EduTrack</title>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Top Navbar Header -->
+    <header class="site-header">
+        <div class="brand-container">
+            <div class="brand-logo-badge">✦</div>
+            <div class="brand-text-wrap">
+                <span class="brand-title">EduTrack</span>
+                <span class="brand-tagline">Smart Student Records</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="list.html" class="nav-link">Students</a>
+            <a href="listOne.html" class="nav-link">Search</a>
+            <a href="insert.html" class="nav-link">Add Student</a>
+            <a href="update.html" class="nav-link">Update</a>
+            <a href="delete.html" class="nav-link">Delete</a>
+        </nav>
+    </header>
+
+    <!-- Two-Column Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">🎓 SCHOOL STUDENT PORTAL</div>
+            <h1 class="hero-title"><span class="heading-icon">📋</span> STUDENT MANAGEMENT</h1>
+            <p class="hero-subtitle">A clean, modern student management dashboard for adding, viewing, searching, updating and safely removing student records.</p>
+            <div class="hero-cta">
+                <button class="btn" onclick="location.href='list.html'">View Students →</button>
+                <button class="btn btn-outline" onclick="location.href='insert.html'">Add Student</button>
+            </div>
+        </div>
+
+        <div class="hero-image-wrap">
+            <img src="images/home.jpg" alt="Students in Classroom" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Student Workspace Section -->
+    <section class="workspace-section">
+        <div class="section-header">
+            <h2 class="section-title">Student workspace</h2>
+            <p class="section-subtitle">Choose an action to continue.</p>
+        </div>
+
+        <div class="workspace-grid">
+            <button class="workspace-card card-teal" onclick="location.href='list.html'">
+                <div class="card-icon">📋</div>
+                <div class="card-title">All Students</div>
+                <div class="card-desc">View the complete student directory.</div>
+            </button>
+
+            <button class="workspace-card card-amber" onclick="location.href='listOne.html'">
+                <div class="card-icon">🔍</div>
+                <div class="card-title">Find Student</div>
+                <div class="card-desc">Search a single student record.</div>
+            </button>
+
+            <button class="workspace-card card-blue" onclick="location.href='insert.html'">
+                <div class="card-icon">➕</div>
+                <div class="card-title">Add Student</div>
+                <div class="card-desc">Create a new student record.</div>
+            </button>
+
+            <button class="workspace-card card-purple" onclick="location.href='update.html'">
+                <div class="card-icon">✏️</div>
+                <div class="card-title">Update Student</div>
+                <div class="card-desc">Select a roll number and edit details.</div>
+            </button>
+
+            <button class="workspace-card card-red" onclick="location.href='delete.html'">
+                <div class="card-icon">🗑️</div>
+                <div class="card-title">Delete Student</div>
+                <div class="card-desc">Select a roll number before removing it.</div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>© 2026 EduTrack – Student Management System</p>
+    </footer>
+
+</div>
+
+</body>
+
+</html>

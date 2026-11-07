@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="100%" height="140" style="border-radius:12px;">
+  <defs>
+    <linearGradient id="bgGradInsert" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E" />
+      <stop offset="70%" stop-color="#115E59" />
+      <stop offset="100%" stop-color="#0F766E" />
+    </linearGradient>
+    <linearGradient id="accentGradInsert" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="shadowInsert" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="140" fill="url(#bgGradInsert)" rx="12" />
+
+  <circle cx="70" cy="30" r="50" fill="#14B8A6" fill-opacity="0.15" />
+  <circle cx="530" cy="110" r="70" fill="#F59E0B" fill-opacity="0.15" />
+
+  <!-- Admission Form Graphic (Left) -->
+  <g transform="translate(55, 20)" filter="url(#shadowInsert)">
+    <rect x="0" y="0" width="80" height="85" rx="6" fill="#FFFFFF" />
+    <!-- Form lines -->
+    <rect x="10" y="12" width="40" height="6" rx="3" fill="#0F766E" />
+    <rect x="10" y="26" width="60" height="4" rx="2" fill="#E5E7EB" />
+    <rect x="10" y="36" width="60" height="4" rx="2" fill="#E5E7EB" />
+    <rect x="10" y="46" width="45" height="4" rx="2" fill="#E5E7EB" />
+    <!-- Seal / Stamp -->
+    <circle cx="55" cy="62" r="12" fill="url(#accentGradInsert)" />
+    <polyline points="49,62 53,66 61,58" stroke="#042F2E" stroke-width="2" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Central Card: New Enrollment Action (Center) -->
+  <g transform="translate(195, 18)" filter="url(#shadowInsert)">
+    <rect x="0" y="0" width="220" height="88" rx="10" fill="#FFFFFF" />
+    <!-- Icon Circle -->
+    <circle cx="36" cy="44" r="22" fill="url(#accentGradInsert)" />
+    <!-- Plus symbol & ID icon -->
+    <path d="M36 32 L36 56 M24 44 L48 44" stroke="#042F2E" stroke-width="3.5" stroke-linecap="round" />
+
+    <text x="72" y="32" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="13" font-weight="700">NEW ADMISSION</text>
+    <text x="72" y="48" fill="#4B5563" font-family="'Poppins', sans-serif" font-size="10">Enroll Student into Database</text>
+    
+    <!-- Mini inputs visualization -->
+    <rect x="72" y="58" width="40" height="18" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="1" />
+    <text x="92" y="70" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="8" font-weight="600" text-anchor="middle">ROLL</text>
+
+    <rect x="116" y="58" width="55" height="18" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="1" />
+    <text x="143" y="70" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="8" font-weight="600" text-anchor="middle">NAME</text>
+
+    <rect x="175" y="58" width="35" height="18" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="1" />
+    <text x="192" y="70" fill="#0F766E" font-family="'Poppins', sans-serif" font-size="8" font-weight="600" text-anchor="middle">MARKS</text>
+  </g>
+
+  <!-- Pen / Quill Graphic (Right) -->
+  <g transform="translate(455, 20)" filter="url(#shadowInsert)">
+    <!-- Pen rotated -->
+    <g transform="rotate(35, 50, 40)">
+      <rect x="42" y="5" width="16" height="60" rx="3" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5" />
+      <polygon points="42,65 58,65 50,82" fill="url(#accentGradInsert)" />
+      <circle cx="50" cy="80" r="2" fill="#042F2E" />
+      <rect x="45" y="10" width="10" height="8" rx="2" fill="#0F766E" />
+      <!-- Clip -->
+      <rect x="58" y="15" width="4" height="25" rx="1.5" fill="#F59E0B" />
+    </g>
+  </g>
+
+  <g transform="translate(180, 114)">
+    <rect x="0" y="0" width="240" height="20" rx="10" fill="#042F2E" fill-opacity="0.55" />
+    <text x="120" y="14" fill="#FFFBF2" font-family="'Poppins', sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" letter-spacing="0.6">
+      STUDENT REGISTRATION &amp; ENTRY
+    </text>
+  </g>
+</svg>
